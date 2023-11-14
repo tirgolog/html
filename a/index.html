@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirgo Client App</title>
+</head>
+<body>
+    <script>
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+
+
+
+    if ( isMobile.Android() ) {
+        document.location.href = "https://play.google.com/store/apps/details?id=uz.nazirov.tirgo_user";
+    }
+    else if(isMobile.iOS()){
+        document.location.href="https://apps.apple.com/us/app/tirgo/id1640721645";
+    } else {
+        document.location.href="https://tirgo.uz/"
+    }
+    </script>
+</body>
+</html>
